@@ -15,6 +15,7 @@ func load_settings():
 	set_language(Settings.config_data.region.language)
 	isMute = Settings.config_data.audio.mute
 	update_textures_sound()
+	update_textures_language()
 
 func set_language(id):
 	TranslationServer.set_locale(id)

@@ -16,7 +16,7 @@ func _physics_process(delta):
 		if body.is_in_group("blocks"):
 			body.queue_free()
 			$break.play()
-			if body.get_parent().get_child_count() == 1:
+			if body.get_parent().get_child_count() == 44:
 				get_parent().isWin = true
 				queue_free()
 				create_next()
@@ -32,6 +32,3 @@ func create_next():
 	get_parent().add_child(next)
 	get_tree().paused = true
 	get_parent().get_node("background").stop()
-	if Save.data.level != 5:
-		Save.data.level += 1
-		Save.save_game()

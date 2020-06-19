@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://fonts/df_pixel22.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Levels/world.gd" type="Script" id=2]
+[ext_resource path="res://levels/world.gd" type="Script" id=2]
 [ext_resource path="res://ball/ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/stage_blocks3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/death_zone.tscn" type="PackedScene" id=5]
@@ -17,6 +17,7 @@ bounce = 1.0
 
 [node name="world" type="Node"]
 script = ExtResource( 2 )
+level = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

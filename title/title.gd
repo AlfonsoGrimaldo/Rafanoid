@@ -9,7 +9,7 @@ func _ready():
 	$title_margin/levels.unlock_level()
 	set_process_input(false)
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if !$title_margin/menu.visible:
 			set_focus_levels(false)
@@ -22,7 +22,7 @@ func set_focus(active):
 		$title_margin/menu/bt_levels/bt.enabled_focus_mode = Control.FOCUS_NONE
 
 func set_focus_levels(active):
-	var limit = Save.data.level + 1
+	var limit = Save.level + 1
 	for i in range(1, limit):
 		var bt = get_node("title_margin/levels/bt_level" + str(i) + "/bt")
 		if active:
@@ -31,7 +31,7 @@ func set_focus_levels(active):
 			bt.enabled_focus_mode = Control.FOCUS_NONE
 
 func _on_start_pressed():
-	var num_level = str(Save.data.level)
+	var num_level = str(Save.level)
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://levels/world" + num_level + ".tscn")
 

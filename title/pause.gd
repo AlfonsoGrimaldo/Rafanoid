@@ -4,9 +4,9 @@ var isPaused := false
 
 onready var world = get_parent().get_parent()
 
-func _input(event):
-	if !world.isGameOver && !world.isWin:
-		if event.is_action_pressed("ui_cancel"):
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if !world.isGameOver && !world.isWin:
 			isPaused = !isPaused
 			visible = isPaused
 			$title_margin/menu/bt_replay/bt.grab_focus()

@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 func unlock_level():
-	var limit = Save.data.level + 1
+	var limit = Save.level + 1
 	for i in range(2, limit):
 		get_node("bt_level" + str(i) + "/bt").disabled = false
 		get_node("bt_level" + str(i) + "/bt").focus_mode = Control.FOCUS_ALL

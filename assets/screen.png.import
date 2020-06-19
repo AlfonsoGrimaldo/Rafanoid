@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Button-mute-focus.png-bdfed66af97eee2e4da035e200ec31d0.stex"
+path="res://.import/screen.png-87ed1d38aa248acbe2329756f8cac7a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Button-mute-focus.png"
-dest_files=[ "res://.import/Button-mute-focus.png-bdfed66af97eee2e4da035e200ec31d0.stex" ]
+source_file="res://assets/screen.png"
+dest_files=[ "res://.import/screen.png-87ed1d38aa248acbe2329756f8cac7a7.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

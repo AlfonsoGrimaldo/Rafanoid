@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Rafanoid"
 run/main_scene="res://title/title.tscn"
+boot_splash/image="res://assets/screen.png"
 config/icon="res://icon.png"
 
 [autoload]
@@ -54,4 +55,5 @@ translations=PoolStringArray( "res://idioms/translation.en.translation", "res://
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

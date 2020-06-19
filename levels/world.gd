@@ -2,6 +2,8 @@ extends Node
 
 signal start_game
 
+export (int) var level
+
 var isStart := false
 var isWin := false
 var isGameOver := false
@@ -15,9 +17,9 @@ func _ready():
 	connect("start_game", $ball, "start_ball")
 # warning-ignore:return_value_discarded
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):
-		if not isStart:
+		if !isStart:
 			$start.play()
 			$CanvasLayer/Label.hide()
 			$player/RemoteT.queue_free()
