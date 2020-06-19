@@ -1,0 +1,30 @@
+id,es,en
+bt_a,Continuar,Continue
+bt_b,Niveles,Levels
+bt_c,Salir,Quit
+bt_d,Nivel1,Level1
+bt_e,Nivel2,Level2
+bt_f,Nivel3,Level3
+bt_g,Nivel4,Level4
+bt_h,Nivel5,Level5
+bt_i,Reiniciar,Restart
+bt_j,Volver,Back
+bt_k,Siguir,Next
+txt_a,"Nivel 1
+Presiona intro para continuar","Level 1
+Press enter to continue"
+txt_b,"Nivel 2
+Presiona intro para continuar","Level 2
+Press enter to continue"
+txt_c,"Nivel 3
+Presiona intro para continuar","Level 3
+Press enter to continue"
+txt_d,"Nivel 4
+Presiona intro para continuar","Level 4
+Press enter to continue"
+txt_e,"Nivel 5
+Presiona intro para continuar","Level 5
+Press enter to continue"
+txt_f,Fin del juego,Game Over
+txt_g,Ganaste,You Win
+txt_h,Pausa,Pause

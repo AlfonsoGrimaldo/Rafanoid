@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://fonts/df_pixel22.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Levels/world.gd" type="Script" id=2]
+[ext_resource path="res://ball/ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/stage_blocks3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/death_zone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://title/pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/environment.tscn" type="PackedScene" id=7]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://audios/background.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audios/start.wav" type="AudioStream" id=10]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 1.0
+
+[node name="world" type="Node"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -11.5
+margin_bottom = 11.5
+custom_fonts/font = ExtResource( 1 )
+text = "txt_c"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="environment" parent="." instance=ExtResource( 7 )]
+skew = 4.37114e-08
+
+[node name="player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 144, 470 )
+
+[node name="RemoteT" type="RemoteTransform2D" parent="player"]
+position = Vector2( 0, -19.349 )
+remote_path = NodePath("../../ball")
+
+[node name="ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, 450.651 )
+skew = 4.37114e-08
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 0.0
+velocity = Vector2( 50, -400 )
+
+[node name="stage_blocks" parent="." instance=ExtResource( 4 )]
+skew = 4.37114e-08
+
+[node name="death_zone" parent="." instance=ExtResource( 5 )]
+position = Vector2( 144.413, 515.896 )
+skew = 4.37114e-08
+
+[node name="background" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

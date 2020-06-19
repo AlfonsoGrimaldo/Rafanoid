@@ -1,0 +1,475 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/gameplay/background.png" type="Texture" id=1]
+[ext_resource path="res://title/main_title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://title/bt_quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://title/bt_start.tscn" type="PackedScene" id=4]
+[ext_resource path="res://title/title.gd" type="Script" id=5]
+[ext_resource path="res://title/bt_parent.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/ui/Blue-focus.png" type="Texture" id=7]
+[ext_resource path="res://title/levels.gd" type="Script" id=8]
+[ext_resource path="res://fonts/df_pixel22.tres" type="DynamicFont" id=9]
+[ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/ui/Blue-config1.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/Blue-config2.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/Blue-config-focus.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/Button-sound-focus.png" type="Texture" id=14]
+[ext_resource path="res://title/options.gd" type="Script" id=15]
+[ext_resource path="res://assets/ui/Button-sound.png" type="Texture" id=16]
+[ext_resource path="res://assets/ui/Button-es.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/Button-es-focus.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("title_margin/menu:custom_constants/separation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -10, -64 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("title_margin/menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("title_margin/menu")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("title_margin/levels")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("title_margin/levels:custom_constants/separation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -64, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("title_margin/levels:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("options:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 289.178, 10 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("title_margin/menu:custom_constants/separation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -64, -10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("title_margin/menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("title_margin/menu")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("title_margin/levels")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("title_margin/levels:custom_constants/separation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, -64 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("title_margin/levels:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("options:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 289.178, 10 ), Vector2( 10, 10 ) ]
+}
+
+[node name="title" type="Node"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="options" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -9.99997
+margin_bottom = 48.0
+alignment = 2
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_config" type="TextureButton" parent="options"]
+margin_left = 225.0
+margin_right = 268.0
+margin_bottom = 38.0
+focus_neighbour_right = NodePath("../bt_sound")
+focus_neighbour_bottom = NodePath("../../title_margin/menu/bt_start/bt")
+action_mode = 0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_focused = ExtResource( 13 )
+
+[node name="bt_sound" type="TextureButton" parent="options"]
+visible = false
+margin_left = 225.0
+margin_right = 268.0
+margin_bottom = 38.0
+focus_neighbour_left = NodePath("../bt_config")
+focus_neighbour_right = NodePath("../bt_language")
+focus_neighbour_bottom = NodePath("../../title_margin/menu/bt_start/bt")
+texture_normal = ExtResource( 16 )
+texture_focused = ExtResource( 14 )
+
+[node name="bt_language" type="TextureButton" parent="options"]
+visible = false
+margin_left = 225.0
+margin_right = 268.0
+margin_bottom = 38.0
+focus_neighbour_left = NodePath("../bt_sound")
+focus_neighbour_right = NodePath("../bt_config")
+focus_neighbour_bottom = NodePath("../../title_margin/menu/bt_start/bt")
+texture_normal = ExtResource( 17 )
+texture_focused = ExtResource( 18 )
+
+[node name="title_margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 150.0
+margin_right = -40.0
+margin_bottom = -133.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="title_margin"]
+margin_right = 208.0
+margin_bottom = 229.0
+custom_constants/separation = -10
+
+[node name="main_title" parent="title_margin/menu" instance=ExtResource( 2 )]
+anchor_right = 0.0
+margin_right = 208.0
+margin_bottom = 67.0
+
+[node name="bt_start" parent="title_margin/menu" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 57.0
+margin_right = 208.0
+margin_bottom = 121.0
+
+[node name="bt" parent="title_margin/menu/bt_start" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_neighbour_left = NodePath("../../../../options/bt_config")
+focus_neighbour_top = NodePath("../../../../options/bt_config")
+focus_neighbour_right = NodePath("../../bt_levels/bt")
+focus_neighbour_bottom = NodePath("../../bt_levels/bt")
+focus_next = NodePath("../../bt_levels/bt")
+focus_previous = NodePath("../../../../options/bt_config")
+action_mode = 0
+texture_hover = ExtResource( 7 )
+texture_disabled = null
+
+[node name="Label" parent="title_margin/menu/bt_start/bt" index="0"]
+text = "bt_a"
+
+[node name="bt_levels" parent="title_margin/menu" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 111.0
+margin_right = 208.0
+margin_bottom = 175.0
+
+[node name="bt" parent="title_margin/menu/bt_levels" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_neighbour_left = NodePath("../../bt_start/bt")
+focus_neighbour_top = NodePath("../../bt_start/bt")
+focus_neighbour_right = NodePath("../../bt_quit/bt")
+focus_neighbour_bottom = NodePath("../../bt_quit/bt")
+focus_next = NodePath("../../bt_quit/bt")
+focus_previous = NodePath("../../bt_start/bt")
+action_mode = 0
+texture_hover = ExtResource( 7 )
+texture_disabled = null
+
+[node name="Label" parent="title_margin/menu/bt_levels/bt" index="0"]
+text = "bt_b"
+
+[node name="bt_quit" parent="title_margin/menu" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_top = 165.0
+margin_right = 208.0
+margin_bottom = 229.0
+
+[node name="bt" parent="title_margin/menu/bt_quit" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_neighbour_left = NodePath("../../bt_levels/bt")
+focus_neighbour_top = NodePath("../../bt_levels/bt")
+focus_neighbour_right = NodePath("../../bt_start/bt")
+focus_neighbour_bottom = NodePath("../../bt_start/bt")
+focus_next = NodePath("../../bt_start/bt")
+focus_previous = NodePath("../../bt_levels/bt")
+focus_mode = 1
+toggle_mode = true
+enabled_focus_mode = 1
+texture_hover = ExtResource( 7 )
+texture_disabled = null
+
+[node name="Label" parent="title_margin/menu/bt_quit/bt" index="0"]
+text = "bt_c"
+
+[node name="levels" type="VBoxContainer" parent="title_margin"]
+visible = false
+margin_right = 208.0
+margin_bottom = 343.0
+custom_constants/separation = 0
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="title_margin/levels"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 9 )
+text = "Select the level"
+align = 1
+valign = 1
+
+[node name="bt_level1" parent="title_margin/levels" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_right = 208.0
+
+[node name="bt" parent="title_margin/levels/bt_level1" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+
+[node name="Label" parent="title_margin/levels/bt_level1/bt" index="0"]
+text = "bt_d"
+
+[node name="bt_level2" parent="title_margin/levels" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_right = 208.0
+
+[node name="bt" parent="title_margin/levels/bt_level2" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_mode = 0
+disabled = true
+
+[node name="Label" parent="title_margin/levels/bt_level2/bt" index="0"]
+text = "bt_e"
+
+[node name="bt_level3" parent="title_margin/levels" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_right = 208.0
+
+[node name="bt" parent="title_margin/levels/bt_level3" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_mode = 0
+disabled = true
+
+[node name="Label" parent="title_margin/levels/bt_level3/bt" index="0"]
+text = "bt_f"
+
+[node name="bt_level4" parent="title_margin/levels" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_right = 208.0
+
+[node name="bt" parent="title_margin/levels/bt_level4" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_mode = 0
+disabled = true
+
+[node name="Label" parent="title_margin/levels/bt_level4/bt" index="0"]
+text = "bt_g"
+
+[node name="bt_level5" parent="title_margin/levels" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_right = 208.0
+
+[node name="bt" parent="title_margin/levels/bt_level5" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+focus_mode = 0
+disabled = true
+
+[node name="Label" parent="title_margin/levels/bt_level5/bt" index="0"]
+text = "bt_h"
+
+[node name="version_lb" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -76.0
+margin_top = -22.0
+custom_fonts/font = SubResource( 1 )
+text = "Version: 1.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/levels = SubResource( 2 )
+anims/menu = SubResource( 3 )
+[connection signal="pressed" from="options/bt_config" to="options" method="_on_bt_config_pressed"]
+[connection signal="pressed" from="options/bt_sound" to="options" method="_on_bt_sound_pressed"]
+[connection signal="pressed" from="options/bt_language" to="options" method="_on_bt_language_pressed"]
+[connection signal="pressed" from="title_margin/menu/bt_start/bt" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="title_margin/menu/bt_levels/bt" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="title_margin/menu/bt_quit/bt" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="title_margin/levels/bt_level1/bt" to="title_margin/levels" method="_on_level1_pressed"]
+[connection signal="pressed" from="title_margin/levels/bt_level2/bt" to="title_margin/levels" method="_on_level2_pressed"]
+[connection signal="pressed" from="title_margin/levels/bt_level3/bt" to="title_margin/levels" method="_on_level3_pressed"]
+[connection signal="pressed" from="title_margin/levels/bt_level4/bt" to="title_margin/levels" method="_on_level4_pressed"]
+[connection signal="pressed" from="title_margin/levels/bt_level5/bt" to="title_margin/levels" method="_on_level5_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="title_margin/menu/bt_start"]
+
+[editable path="title_margin/menu/bt_levels"]
+
+[editable path="title_margin/menu/bt_quit"]
+
+[editable path="title_margin/levels/bt_level1"]
+
+[editable path="title_margin/levels/bt_level2"]
+
+[editable path="title_margin/levels/bt_level3"]
+
+[editable path="title_margin/levels/bt_level4"]
+
+[editable path="title_margin/levels/bt_level5"]

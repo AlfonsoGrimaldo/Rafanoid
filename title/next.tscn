@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://title/next.gd" type="Script" id=1]
+[ext_resource path="res://fonts/df_pixel22.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/df_pixel16.tres" type="DynamicFont" id=4]
+[ext_resource path="res://audios/you_win.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/ui/Blue Button 2.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/Blue Button 1.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/Blue-focus.png" type="Texture" id=9]
+
+[node name="next" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0627451, 0.341176, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title_margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 150.0
+margin_right = -40.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="title_margin"]
+margin_right = 208.0
+margin_bottom = 262.0
+
+[node name="message" type="Label" parent="title_margin/menu"]
+margin_right = 208.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.270588, 0.870588, 0, 1 )
+text = "txt_g"
+align = 1
+
+[node name="bt_next" type="HBoxContainer" parent="title_margin/menu"]
+margin_top = 27.0
+margin_right = 208.0
+margin_bottom = 91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt" type="TextureButton" parent="title_margin/menu/bt_next"]
+margin_left = 72.0
+margin_right = 136.0
+margin_bottom = 64.0
+focus_neighbour_left = NodePath("../../bt_back/bt")
+focus_neighbour_top = NodePath("../../bt_back/bt")
+focus_neighbour_right = NodePath("../../bt_back/bt")
+focus_neighbour_bottom = NodePath("../../bt_back/bt")
+focus_next = NodePath("../../bt_back/bt")
+focus_previous = NodePath("../../bt_back/bt")
+size_flags_horizontal = 6
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="title_margin/menu/bt_next/bt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "bt_k"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_back" type="HBoxContainer" parent="title_margin/menu"]
+margin_top = 95.0
+margin_right = 208.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt" type="TextureButton" parent="title_margin/menu/bt_back"]
+margin_left = 72.0
+margin_right = 136.0
+margin_bottom = 64.0
+focus_neighbour_left = NodePath("../../bt_next/bt")
+focus_neighbour_top = NodePath("../../bt_next/bt")
+focus_neighbour_right = NodePath("../../bt_next/bt")
+focus_neighbour_bottom = NodePath("../../bt_next/bt")
+focus_next = NodePath("../../bt_next/bt")
+focus_previous = NodePath("../../bt_next/bt")
+size_flags_horizontal = 6
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="title_margin/menu/bt_back/bt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "bt_j"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="pressed" from="title_margin/menu/bt_next/bt" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="title_margin/menu/bt_back/bt" to="." method="_on_back_pressed"]
