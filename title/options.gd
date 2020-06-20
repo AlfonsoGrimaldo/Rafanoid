@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-var index := 0
+var index := 1
 
 var language := ["es", "en"]
 

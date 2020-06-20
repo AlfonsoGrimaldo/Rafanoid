@@ -361,8 +361,8 @@ custom_constants/separation = 0
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="title_margin/levels"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 208.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 9 )
 text = "Select the level"
 align = 1
@@ -370,7 +370,9 @@ valign = 1
 
 [node name="bt_level1" parent="title_margin/levels" instance=ExtResource( 6 )]
 anchor_right = 0.0
+margin_top = 23.0
 margin_right = 208.0
+margin_bottom = 87.0
 
 [node name="bt" parent="title_margin/levels/bt_level1" index="0"]
 margin_left = 72.0
@@ -381,7 +383,9 @@ text = "bt_d"
 
 [node name="bt_level2" parent="title_margin/levels" instance=ExtResource( 6 )]
 anchor_right = 0.0
+margin_top = 87.0
 margin_right = 208.0
+margin_bottom = 151.0
 
 [node name="bt" parent="title_margin/levels/bt_level2" index="0"]
 margin_left = 72.0
@@ -394,7 +398,9 @@ text = "bt_e"
 
 [node name="bt_level3" parent="title_margin/levels" instance=ExtResource( 6 )]
 anchor_right = 0.0
+margin_top = 151.0
 margin_right = 208.0
+margin_bottom = 215.0
 
 [node name="bt" parent="title_margin/levels/bt_level3" index="0"]
 margin_left = 72.0
@@ -407,7 +413,9 @@ text = "bt_f"
 
 [node name="bt_level4" parent="title_margin/levels" instance=ExtResource( 6 )]
 anchor_right = 0.0
+margin_top = 215.0
 margin_right = 208.0
+margin_bottom = 279.0
 
 [node name="bt" parent="title_margin/levels/bt_level4" index="0"]
 margin_left = 72.0
@@ -420,7 +428,9 @@ text = "bt_g"
 
 [node name="bt_level5" parent="title_margin/levels" instance=ExtResource( 6 )]
 anchor_right = 0.0
+margin_top = 279.0
 margin_right = 208.0
+margin_bottom = 343.0
 
 [node name="bt" parent="title_margin/levels/bt_level5" index="0"]
 margin_left = 72.0

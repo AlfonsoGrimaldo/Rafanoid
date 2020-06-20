@@ -16,7 +16,7 @@ func _physics_process(delta):
 		if body.is_in_group("blocks"):
 			body.queue_free()
 			$break.play()
-			if body.get_parent().get_child_count() == 44:
+			if body.get_parent().get_child_count() == 1:
 				get_parent().isWin = true
 				queue_free()
 				create_next()

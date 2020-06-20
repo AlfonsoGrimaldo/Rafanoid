@@ -50,17 +50,12 @@ margin_bottom = 91.0
 [node name="bt" parent="title_margin/menu/bt_replay" index="0"]
 margin_left = 72.0
 margin_right = 136.0
-focus_neighbour_left = NodePath("../../bt_quit/bt")
-focus_neighbour_top = NodePath("../../bt_quit/bt")
-focus_neighbour_right = NodePath("../../bt_quit/bt")
-focus_neighbour_bottom = NodePath("../../bt_quit/bt")
-focus_next = NodePath("../../bt_quit/bt")
-focus_previous = NodePath("../../bt_quit/bt")
 
 [node name="Label" parent="title_margin/menu/bt_replay/bt" index="0"]
 text = "bt_i"
 
 [node name="bt_quit" parent="title_margin/menu" instance=ExtResource( 3 )]
+visible = false
 anchor_right = 0.0
 margin_top = 95.0
 margin_right = 208.0
